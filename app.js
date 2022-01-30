@@ -23,6 +23,7 @@ const game = {
     }
     } 
 
+    console.log(game.getGuess())
 
 
 
