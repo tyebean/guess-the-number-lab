@@ -5,7 +5,11 @@
         // and also between biggest and smallest nums
         //let guess | placeholder
         //return nan if prompt is NaN
-
+        //peudocode #4
+      // the guess will be put into the prevGuesses array if the guess is not equal to secretNum 
+      // do (push getGuess into prevGuesses)
+      //while getGuess !-- (is not equal to) secretNum
+      // invoke game.getGuess() by saying something like: console.log(`${game.getGuess} was not the correct number. guess again!')
 const game = {
   title: 'Guess the Number!',
   biggestNum: 100,
@@ -24,20 +28,26 @@ const game = {
   play: function() {
     this.secretNum = Math.floor(Math.random() * 
       (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
-      let theplayersGuess = ""
-      while(theplayersGuess !== this.getGuess){
-        this.prevGuesses.push([])
-        console.log(`Your guess was incorrect. Try again!`)
-      }
-  },
-  weRend: function(){
-    render()
-  if(theplayerGuess === this.getGuess){
-    console.log(`Congrats! You have guessed the number in ${this.prevGuesses.length} guesses!`)
-  } else {
-    console.log(`Your guess is too [high|low]. Your previous guesses are ${this.prevGuesses.join(', ')}.`)
-  }
-}
+      do {
+        this.prevGuesses.push(this.getGuess)
+        console.log(this.prevGuesses)
+      } while (
+        this.getGuess !== this.secretNum
+        // console.log(`The number ${this.getGuess} is incorrect. Try again!`)
+      )
+      console.log(`The number ${this.getGuess} is incorrect. Try again!`)
+    } 
+} 
+
+//   },
+//   weRend: function(){
+//     render()
+//   if(theplayerGuess === this.getGuess){
+//     console.log(`Congrats! You have guessed the number in ${this.prevGuesses.length} guesses!`)
+//   } else {
+//     console.log(`Your guess is too [high|low]. Your previous guesses are ${this.prevGuesses.join(', ')}.`)
+//   }
+// }
 
 game.play()
 
