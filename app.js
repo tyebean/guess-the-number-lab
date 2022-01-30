@@ -17,4 +17,7 @@ const game = {
     this.secretNum = Math.floor(Math.random() * 
       (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
   }
+  if (i = 0; i <= getGuess; i++) {
+    prevGuesses.push 
+  }
 }
