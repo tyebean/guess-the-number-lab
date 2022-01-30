@@ -17,35 +17,29 @@ const game = {
     do {
       guess = parseInt(prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}.`))
     }
-    while (
-      guess <= this.biggestNum || guess >= this.smallestNum);
-      return guess
-    }
-    } 
+    while ( 
+      isNaN(guess) || guess > this.biggestNum || guess < this.smallestNum);
+      console.log(game.getGuess())
+    },
+  play: function() {
+    this.secretNum = Math.floor(Math.random() * 
+      (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
+      let theplayersGuess = ""
+      while(theplayersGuess !== this.getGuess){
+        this.prevGuesses.push([])
+        console.log(`Your guess was incorrect. Try again!`)
+      }
+  },
+  weRend: function(){
+    render()
+  if(theplayerGuess === this.getGuess){
+    console.log(`Congrats! You have guessed the number in ${this.prevGuesses.length} guesses!`)
+  } else {
+    console.log(`Your guess is too [high|low]. Your previous guesses are ${this.prevGuesses.join(', ')}.`)
+  }
+}
 
-    console.log(game.getGuess())
-
-
-
-//   play: function() {
-//     this.secretNum = Math.floor(Math.random() * 
-//       (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
-//       let theplayersGuess = ""
-//       while(theplayersGuess !== this.getGuess){
-//         this.prevGuesses.push([])
-//         console.log(`Your guess was incorrect. Try again!`)
-//       }
-//   },
-//   weRend: function(){
-//     render()
-//   if(theplayerGuess === this.getGuess){
-//     console.log(`Congrats! You have guessed the number in ${this.prevGuesses.length} guesses!`)
-//   } else {
-//     console.log(`Your guess is too [high|low]. Your previous guesses are ${this.prevGuesses.join(', ')}.`)
-//   }
-// }
-
-// game.play()
+game.play()
 
 //high/low
 //console log frequently
