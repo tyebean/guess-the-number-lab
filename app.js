@@ -5,7 +5,7 @@
         // and also between biggest and smallest nums
         //let guess | placeholder
         //return nan if prompt is NaN
-        //peudocode #4
+//peudocode #4
       // the guess will be put into the prevGuesses array if the guess is not equal to secretNum 
       // do (push getGuess into prevGuesses)
       //while getGuess !-- (is not equal to) secretNum
@@ -30,12 +30,11 @@ const game = {
       (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
       do {
         this.prevGuesses.push(this.getGuess)
-        console.log(this.prevGuesses)
+          console.log(this.prevGuesses)
       } while (
         this.getGuess !== this.secretNum
-        // console.log(`The number ${this.getGuess} is incorrect. Try again!`)
       )
-      console.log(`The number ${this.getGuess} is incorrect. Try again!`)
+      console.log(`The number ${this.getGuess} isn't quite right. Try again!`)
     } 
 } 
 
