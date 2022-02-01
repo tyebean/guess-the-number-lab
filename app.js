@@ -21,10 +21,10 @@ const game = {
   getGuess: function() {
     let guess;
     do {
-      guess = parseInt(prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}.`))
+      guess = parseInt(prompt(`Welcome to ${this.title} Enter a guess between ${this.smallestNum} and ${this.biggestNum}.`))
     }
     while ( 
-      isNaN(guess) || guess <= this.biggestNum || guess >= this.smallestNum);
+      isNaN(guess) || guess < this.biggestNum || guess > this.smallestNum);
     },
   play: function() {
     this.secretNum = Math.floor(Math.random() * 
@@ -35,23 +35,30 @@ const game = {
       } while (this.prevGuesses[this.prevGuesses.length - 1] !== this.secretNum)
       //get explanation about the above while loop?
     },
-    highOrLow: function(){
-      if (this.getGuess > this.secretNum) {
-        return "high"
-      } else if (this.getGuess < this.secretNum) {
-        return "low"
-      }
-    },
   render: function(){
-    if(this.secretNum === this.getGuess){
+    if(this.secretNum === this.prevGuesses[this.prevGuesses.length - 1]){
       alert(`Congrats! You have guessed the number in ${this.prevGuesses.length} guesses!`)
+      // ❓ return 'all done'
     } else {
-      alert(`Your guess is too ${this.highOrLow}. Your previous guesses are ${this.prevGuesses.join(", ")}.`)
+      this.getGuess > this.secretNum ? alert('your guess is too high') : alert('your guess is too low')
     }
   }
 }
 
 game.play()
+
+
+
+//lizz suggested a:
+//tenery 
+//different way for an if else sta
+//am i true?yes:no
+//first thing happens if it is true
+//second happens if false
+
+//for high/low
+//take note of the index prevGuesses array
+//grab -1 index, have access to the last guess
 
 //still need to
 //add high/low
