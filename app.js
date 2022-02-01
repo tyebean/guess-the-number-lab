@@ -24,23 +24,27 @@ const game = {
       guess = parseInt(prompt(`Welcome to ${this.title} Enter a guess between ${this.smallestNum} and ${this.biggestNum}.`))
     }
     while ( 
-      isNaN(guess) || guess < this.biggestNum || guess > this.smallestNum);
+      isNaN(guess) || guess > this.biggestNum || guess < this.smallestNum)
+
+      return guess 
+      // looked at solution to find position of return geuss**
     },
   play: function() {
     this.secretNum = Math.floor(Math.random() * 
       (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
+      console.log(this.secretNum)
       do {
         this.prevGuesses.push(this.getGuess())
         this.render()
       } while (this.prevGuesses[this.prevGuesses.length - 1] !== this.secretNum)
-      //get explanation about the above while loop?
+      //get explanation about the above while loop? **looked at solution for help with line 35**
     },
   render: function(){
     if(this.secretNum === this.prevGuesses[this.prevGuesses.length - 1]){
       alert(`Congrats! You have guessed the number in ${this.prevGuesses.length} guesses!`)
-      // ❓ return 'all done'
     } else {
-      this.getGuess > this.secretNum ? alert('your guess is too high') : alert('your guess is too low')
+      console.log(this.prevGuesses[this.prevGuesses.length - 1])
+      this.prevGuesses[this.prevGuesses.length - 1] > this.secretNum ? alert('your guess is too high') : alert('your guess is too low')
     }
   }
 }
@@ -48,9 +52,8 @@ const game = {
 game.play()
 
 
-
 //lizz suggested a:
-//tenery 
+//ternary
 //different way for an if else sta
 //am i true?yes:no
 //first thing happens if it is true
